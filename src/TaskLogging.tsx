@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import Content from './Content';
+import ActivityItem from './ActivityItem';
 
 const TaskLogging: React.FC = () =>  {
 
@@ -35,10 +36,13 @@ const TaskLogging: React.FC = () =>  {
       <>
       <div className="notificationsFrame">
         <div className="panel">
-          <Header></Header>
+          <Header titulo='Registro de tareas'></Header>
+          <Header titulo='Perfil'></Header>
+          <Header titulo='Preferencias'></Header>
+          <Header titulo='Chat'></Header>
           {
             obj.map((item, index) => 
-              <Content key={index} titulo={item.titulo} hora={item.tiempo} src={item.src} alt="avatar" 
+              <ActivityItem key={index} titulo={item.titulo} hora={item.tiempo} src={item.src} alt="avatar" 
             />)
           }
         </div>

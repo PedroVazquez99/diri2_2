@@ -1,21 +1,18 @@
 
-import './styles.css'
+import { FC } from 'react';
 
-const Header: React.FC = () =>  {
+import './styles/HeaderStyle.css'
+interface HeaderProps {
+  titulo: string;
+}
+
+
+const Header: FC<HeaderProps> = (props) =>  {
     return (
           <div className="header">
-            <div className="menuIcon">
-              <div className="dashTop"></div>
-              <div className="dashBottom"></div>
-              <div className="circle"></div>
-            </div>
-            <h1>Registro de Tareas</h1>
-            <input
-              type="text"
-              className="searchInput"
-              placeholder="Buscar ..."
-            />
-            <div className="fa fa-search searchIcon"></div>
+            <img src='/icons/menu.svg' className='icon'/>
+            <h1>{props.titulo}</h1>
+            <img src='/icons/search.svg' className='icon'/>
           </div>
       
     );
